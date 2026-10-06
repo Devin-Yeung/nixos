@@ -8,6 +8,10 @@
       url = "https://flakehub.com/f/nix-community/home-manager/0.2605.*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    llm-agents = {
+      url = "github:numtide/llm-agents.nix";
+    };
   };
 
   outputs = { nixpkgs, home-manager, ... }: {
