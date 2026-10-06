@@ -1,7 +1,15 @@
+{ pkgs, ... }:
+
 {
+
+  # pair with users.user.<name>.shell
+  programs.zsh.enable = true;
+
   users.users.ycg = {
     isNormalUser = true;
     description = "ycg";
+    # login shell
+    shell = pkgs.zsh;
     extraGroups = [
       "networkmanager"
       "wheel"
