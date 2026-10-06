@@ -13,7 +13,7 @@
       font-thicken = true;
 
       # theme
-      theme = "nord";
+      theme = "Nord";
 
       # keybindings
       keybind = [
