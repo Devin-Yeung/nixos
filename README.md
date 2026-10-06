@@ -6,8 +6,9 @@ A newly generated NixOS installation may not yet enable the `nix-command` and `f
 Clone this repository, then use a one-command environment override for the first switch:
 
 ```bash
+# prefer bootstrap with root, since root is the default trusted user to make caches works
 NIX_CONFIG="experimental-features = nix-command flakes" \
-  nix run 'nixpkgs#nh' -- os switch . --accept-flake-config
+  sudo nixos-rebuild switch --flake .#nixos --accept-flake-config
 ```
 
 The activated configuration enables both features, so later rebuilds no longer need the override:
