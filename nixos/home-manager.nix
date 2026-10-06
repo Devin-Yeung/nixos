@@ -9,5 +9,10 @@
   # `inputs` into the HM module system explicitly.
   home-manager.extraSpecialArgs = { inherit inputs; };
 
-  home-manager.users.ycg = ../home;
+  home-manager.users.ycg = {
+    imports = [
+      ../modules/home-manager
+      ../home
+    ];
+  };
 }
