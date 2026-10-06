@@ -6,13 +6,13 @@ A newly generated NixOS installation may not yet enable the `nix-command` and `f
 Clone this repository, then use a one-command environment override for the first switch:
 
 ```bash
-sudo env NIX_CONFIG="experimental-features = nix-command flakes" \
-  nixos-rebuild switch --flake .#nixos
+NIX_CONFIG="experimental-features = nix-command flakes" \
+  nix run 'nixpkgs#nh' -- os switch . --accept-flake-config
 ```
 
 The activated configuration enables both features, so later rebuilds no longer need the override:
 
 ```bash
-sudo nixos-rebuild switch --flake .#nixos
+nh os switch
 ```
 

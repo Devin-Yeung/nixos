@@ -1,6 +1,19 @@
 {
   description = "NixOS configuration";
 
+  nixConfig = {
+    # Disallow Import From Derivation (IFD) so evaluation stays pure.
+    allow-import-from-derivation = false;
+    extra-substituters = [
+      "https://cache.numtide.com"
+      "https://nix-community.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
+
   inputs = {
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2605.*.tar.gz";
 
@@ -14,14 +27,16 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-        home-manager.nixosModules.home-manager
-        ./hosts/nixos
-      ];
+  outputs =
+    { nixpkgs, home-manager, ... }@inputs:
+    {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          home-manager.nixosModules.home-manager
+          ./hosts/nixos
+        ];
+      };
     };
-  };
 }
