@@ -1,6 +1,7 @@
 {
   imports = [
     ./agents
+    ./fonts.nix
     ./zsh
     ./starship.nix
     ./ghostty.nix
