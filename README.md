@@ -8,7 +8,7 @@ Clone this repository, then use a one-command environment override for the first
 ```bash
 # prefer bootstrap with root, since root is the default trusted user to make caches works
 NIX_CONFIG="experimental-features = nix-command flakes" \
-  sudo nixos-rebuild switch --flake .#nixos --accept-flake-config
+  sudo nixos-rebuild switch --flake .#curry --accept-flake-config
 ```
 
 The activated configuration enables both features, so later rebuilds no longer need the override:

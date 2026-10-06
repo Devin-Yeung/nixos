@@ -30,12 +30,12 @@
   outputs =
     { nixpkgs, home-manager, ... }@inputs:
     {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.curry = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
           home-manager.nixosModules.home-manager
-          ./hosts/nixos
+          ./hosts/curry
         ];
       };
     };
