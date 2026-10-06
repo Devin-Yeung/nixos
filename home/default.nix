@@ -1,5 +1,8 @@
 {
-  imports = [ ./zsh ];
+  imports = [
+    ./zsh
+    ./starship.nix
+  ];
 
   home.username = "ycg";
   home.homeDirectory = "/home/ycg";
