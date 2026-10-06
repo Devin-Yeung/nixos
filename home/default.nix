@@ -1,10 +1,11 @@
 {
   imports = [
     ./agents
-    ./fonts.nix
     ./zsh
+    ./fonts.nix
     ./starship.nix
     ./ghostty.nix
+    ./nh.nix
   ];
 
   home.username = "ycg";
