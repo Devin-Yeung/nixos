@@ -9,12 +9,11 @@
   programs.dconf.profiles.user.databases = [
     {
       settings."org/gnome/settings-daemon/plugins/power" = {
-        sleep-inactive-ac-timeout = lib.gvariant.mkUint32 5400;
+        sleep-inactive-ac-timeout = lib.gvariant.mkInt32 5400;
         sleep-inactive-ac-type = "suspend";
-        sleep-inactive-battery-timeout = lib.gvariant.mkUint32 5400;
+        sleep-inactive-battery-timeout = lib.gvariant.mkInt32 5400;
         sleep-inactive-battery-type = "suspend";
       };
-      lockAll = true;
     }
   ];
 
