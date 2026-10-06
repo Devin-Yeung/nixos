@@ -3,6 +3,7 @@
     ./agents
     ./zsh
     ./starship.nix
+    ./ghostty.nix
   ];
 
   home.username = "ycg";
