@@ -1,7 +1,9 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
+  # Make the power plugin's GSettings schema available in the GNOME session.
+  services.desktopManager.gnome.sessionPath = [ pkgs.gnome-settings-daemon ];
 
   # Enforce GNOME's idle-suspend policy for all users on this machine.
   programs.dconf.profiles.user.databases = [
