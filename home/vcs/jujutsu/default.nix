@@ -9,6 +9,7 @@
   imports = [
     ./fileset-aliases.nix
     ./revset-aliases.nix
+    ./starship.nix
   ];
 
   home.packages = [
