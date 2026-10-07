@@ -5,6 +5,7 @@
     ./fonts.nix
     ./starship.nix
     ./ghostty.nix
+    ./nvim.nix
     ./nh.nix
   ];
 
