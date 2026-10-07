@@ -1,4 +1,18 @@
+{ pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    nix-index # locate nix packages with specific files
+    nix-init # generate nix packages from url
+    nix-update # update nix packages
+    nurl # generate nix fetcher call
+    nix-tree # useful for analyzing nix closure
+    nix-search-cli # search nix packages from binary name
+    nix-output-monitor # monitor nix build output
+    nixfmt # format nix files
+    nixd # nix lsp
+    nil # nix lsp
+  ];
+
   nix.settings = {
     experimental-features = [
       "nix-command"
