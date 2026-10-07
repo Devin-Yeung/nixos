@@ -8,6 +8,7 @@
     ./ghostty.nix
     ./nvim.nix
     ./nh.nix
+    ./atuin.nix
   ];
 
   home.username = "ycg";
