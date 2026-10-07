@@ -2,6 +2,7 @@
   imports = [
     ./agents
     ./zsh
+    ./vcs
     ./fonts.nix
     ./starship.nix
     ./ghostty.nix
