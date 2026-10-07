@@ -7,6 +7,8 @@
 }:
 {
   imports = [
+    ./fileset-aliases.nix
+    ./revset-aliases.nix
   ];
 
   home.packages = [
