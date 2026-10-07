@@ -1,0 +1,33 @@
+name: build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build ${{ matrix.host }} (x86_64-linux)
+    # GitHub-hosted Ubuntu runners are x86_64.
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        host:
+          - curry
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v23
+
+      - name: Build NixOS system closure
+        run: >-
+          nix build
+          .#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel
+          --accept-flake-config
+          --no-link
