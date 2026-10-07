@@ -16,6 +16,7 @@
 
   inputs = {
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2605.*.tar.gz";
+    nixpkgs-nightly.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.*.tar.gz";
 
     home-manager = {
       url = "https://flakehub.com/f/nix-community/home-manager/0.2605.*.tar.gz";
@@ -32,10 +33,16 @@
 
   outputs =
     { nixpkgs, home-manager, ... }@inputs:
+    let
+      pkgsNightly = import inputs.nixpkgs-nightly {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
+    in
     {
       nixosConfigurations.curry = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs pkgsNightly; };
         modules = [
           home-manager.nixosModules.home-manager
           ./hosts/curry
