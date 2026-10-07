@@ -26,22 +26,8 @@
       url = "github:numtide/llm-agents.nix";
     };
 
-    # Keep nixvim on its own pinned nixpkgs: the shared config in nvim-config
-    # tracks nixvim's unstable branch and uses options not in stable releases.
-    nixvim = {
-      url = "github:nix-community/nixvim";
-    };
-
-    # Not a flake: a plain Nixvim module tree consumed via `flake = false`.
-    nvim-config = {
-      url = "github:Devin-Yeung/nvim.nix";
-      flake = false;
-    };
-
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # Includes the Nixvim, Nixpkgs, and Neovim overlay revisions it was tested with.
+    nvim-config.url = "github:Devin-Yeung/nvim.nix";
   };
 
   outputs =
