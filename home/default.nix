@@ -9,6 +9,7 @@
     ./nvim.nix
     ./nh.nix
     ./atuin.nix
+    ./zoxide.nix
   ];
 
   home.username = "ycg";
