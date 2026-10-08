@@ -45,6 +45,15 @@
       pager = {
         blame = "${lib.getExe pkgs.delta} --blame-palette 'red green' --blame-code-style=syntax";
       };
+      # rewrite GitHub URLs to SSH
+      url = {
+        "git@github.com:Devin-Yeung" = {
+          insteadOf = [
+            "git@ssh.github.com:Devin-Yeung"
+            "https://github.com/Devin-Yeung"
+          ];
+        };
+      };
     };
   };
 
