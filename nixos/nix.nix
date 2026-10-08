@@ -13,6 +13,11 @@
     nil # nix lsp
   ];
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = [ ];
+  };
+
   nix.settings = {
     experimental-features = [
       "nix-command"
