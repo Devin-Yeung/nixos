@@ -11,6 +11,7 @@
     ./atuin.nix
     ./zoxide.nix
     ./rust.nix
+    ./1password.nix
   ];
 
   home.username = "ycg";
