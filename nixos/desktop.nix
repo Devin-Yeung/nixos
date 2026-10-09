@@ -1,22 +1,36 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
+
 {
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-  # Make the power plugin's GSettings schema available in the GNOME session.
-  services.desktopManager.gnome.sessionPath = [ pkgs.gnome-settings-daemon ];
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
-  # Enforce GNOME's idle-suspend policy for all users on this machine.
-  programs.dconf.profiles.user.databases = [
-    {
-      settings."org/gnome/settings-daemon/plugins/power" = {
-        sleep-inactive-ac-timeout = lib.gvariant.mkInt32 5400;
-        sleep-inactive-ac-type = "suspend";
-        sleep-inactive-battery-timeout = lib.gvariant.mkInt32 5400;
-        sleep-inactive-battery-type = "suspend";
+  # Polkit agent prompts (e.g. 1Password auth) need this on any desktop.
+  security.polkit.enable = true;
+
+  # ReGreet (GTK greeter) replaces tuigreet. Its NixOS module enables
+  # services.greetd and sets default_session to run regreet under cage on tty1.
+  # Keep the login screen light and graphical, independently of app themes.
+  programs.regreet = {
+    enable = true;
+    theme.name = "Adwaita";
+    settings = {
+      GTK.application_prefer_dark_theme = false;
+      background = {
+        path = pkgs.nixos-artwork.wallpapers.simple-blue.gnomeFilePath;
+        fit = "Cover";
       };
-    }
-  ];
+      appearance.greeting_msg = "Welcome back!";
+      widget.clock.format = "%a, %d %b  %H:%M";
+    };
+    cursorTheme = {
+      name = "macOS";
+      package = pkgs.apple-cursor;
+    };
+  };
 
+  # Sets the system keyboard layout (localectl); Hyprland defaults to "us" too.
   services.xserver.xkb = {
     layout = "us";
     variant = "";
