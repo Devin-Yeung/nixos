@@ -1,6 +1,7 @@
 {
   imports = [
     ./desktop.nix
+    ./audio.nix
     ./home-manager.nix
     ./locale.nix
     ./network.nix
