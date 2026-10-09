@@ -3,6 +3,7 @@
     ./agents
     ./zsh
     ./vcs
+    ./tmux
     ./fonts.nix
     ./starship.nix
     ./ghostty.nix
