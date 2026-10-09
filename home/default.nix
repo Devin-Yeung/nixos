@@ -1,5 +1,6 @@
 {
   imports = [
+    ./hyprland
     ./agents
     ./zsh
     ./vcs
