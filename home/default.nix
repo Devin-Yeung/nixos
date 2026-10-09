@@ -4,15 +4,12 @@
     ./zsh
     ./vcs
     ./tmux
-    ./fonts.nix
     ./starship.nix
-    ./ghostty.nix
     ./nvim.nix
     ./nh.nix
     ./atuin.nix
     ./zoxide.nix
     ./rust.nix
-    ./1password.nix
   ];
 
   home.username = "ycg";

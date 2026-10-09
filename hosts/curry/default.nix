@@ -4,6 +4,7 @@
     ./boot.nix
     ./gpu.nix
     ../../nixos
+    ../../profiles/desktop
   ];
 
   networking.hostName = "curry";
