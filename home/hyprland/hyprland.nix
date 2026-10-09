@@ -52,6 +52,33 @@ in
     settings = {
       "$mod" = "SUPER";
 
+      # Desktop chrome only: preserve each application's own opacity/theme.
+      general = {
+        gaps_in = 5;
+        gaps_out = 10;
+        border_size = 2;
+        "col.active_border" = "rgba(90b4ffcc)";
+        "col.inactive_border" = "rgba(ffffff18)";
+      };
+      decoration = {
+        rounding = 12;
+        blur = {
+          enabled = true;
+          size = 6;
+          passes = 2;
+        };
+        shadow = {
+          enabled = true;
+          range = 16;
+          render_power = 3;
+          color = "rgba(00000044)";
+        };
+      };
+      # Hyprland 0.55's match-based rule syntax (not the old layerrulev2).
+      layerrule = [
+        "blur on, ignore_alpha 0.2, match:namespace ^(waybar|rofi|notifications)$"
+      ];
+
       exec-once = [
         "waybar"
         "mako"

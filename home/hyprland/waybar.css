@@ -1,0 +1,81 @@
+/* Scoped to Waybar: no GTK or application-wide theme overrides. */
+* {
+  font-family: sans-serif;
+  font-size: 13px;
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+}
+
+window#waybar {
+  background: rgba(20, 24, 32, 0.78);
+  color: #eef2f8;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+}
+
+#workspaces {
+  margin: 4px 6px;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  margin: 0 2px;
+  border-radius: 10px;
+  background: transparent;
+  color: #a6afbd;
+  box-shadow: none;
+  text-shadow: none;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.10);
+  color: #eef2f8;
+}
+
+#workspaces button.active {
+  background: #90b4ff;
+  color: #141820;
+}
+
+#workspaces button.urgent {
+  background: #f38b8b;
+  color: #141820;
+}
+
+#window {
+  color: #a6afbd;
+  margin-left: 10px;
+}
+
+#clock {
+  font-weight: 600;
+  padding: 0 16px;
+}
+
+#tray, #pulseaudio, #cpu, #memory {
+  margin: 5px 0;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#tray {
+  margin-right: 6px;
+}
+
+#pulseaudio.muted {
+  color: #a6afbd;
+}
+
+tooltip {
+  background: rgba(20, 24, 32, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+tooltip label {
+  color: #eef2f8;
+  padding: 6px;
+}
