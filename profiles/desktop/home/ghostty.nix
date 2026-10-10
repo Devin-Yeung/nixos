@@ -4,7 +4,7 @@
 
     settings = {
       # font config
-      font-size = 22;
+      font-size = 16;
       font-family = [
         "Iosevka NFM"
         # a fallback for the chinese font
