@@ -1,5 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
+  nixpkgs.overlays = [ inputs.nur.overlays.default ];
   environment.systemPackages = with pkgs; [
     nix-index # locate nix packages with specific files
     nix-init # generate nix packages from url
