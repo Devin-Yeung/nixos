@@ -4,6 +4,8 @@
     enable = true;
     profiles.ycg.extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
       vimium
+      onepassword-password-manager
+      ublock-origin
     ];
   };
 }
