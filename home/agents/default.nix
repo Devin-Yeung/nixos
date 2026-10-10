@@ -12,6 +12,7 @@ in
   ];
 
   home.packages = with llm-agents; [
+    pi
     claude-code
     amp
   ];
