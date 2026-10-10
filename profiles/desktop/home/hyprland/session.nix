@@ -23,12 +23,4 @@
       ];
     };
   };
-
-  imports = [
-    ./hyprland.nix
-    ./waybar.nix
-    ./rofi.nix
-    ./notifications.nix
-    ./tools.nix
-  ];
 }

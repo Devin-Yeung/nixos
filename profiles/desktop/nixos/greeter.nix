@@ -1,14 +1,6 @@
 { pkgs, ... }:
 
 {
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  # Polkit agent prompts (e.g. 1Password auth) need this on any desktop.
-  security.polkit.enable = true;
-
   # ReGreet (GTK greeter) replaces tuigreet. Its NixOS module enables
   # services.greetd and sets default_session to run regreet under cage on tty1.
   # Keep the login screen light and graphical, independently of app themes.
@@ -29,14 +21,4 @@
       package = pkgs.apple-cursor;
     };
   };
-
-  # Sets the system keyboard layout (localectl); Hyprland defaults to "us" too.
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  services.printing.enable = true;
-
-  programs.firefox.enable = true;
 }
