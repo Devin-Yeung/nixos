@@ -3,16 +3,16 @@
 
 * {
     background-color: transparent;
-    text-color: #eef2f8;
+    text-color: #dde4f0;
     border-color: #ffffff20;
 }
 
 window {
-    width: 640px;
-    background-color: #141820df;
+    width: 700px;
+    background-color: #161a22e6;
     border: 1px;
     border-radius: 18px;
-    padding: 18px;
+    padding: 20px;
 }
 
 mainbox {
@@ -24,19 +24,19 @@ mainbox {
 inputbar {
     children: [ prompt, entry ];
     spacing: 12px;
-    padding: 10px 12px;
+    padding: 12px 14px;
     background-color: #ffffff0d;
     border: 0px;
     border-radius: 10px;
 }
 
 prompt {
-    text-color: #90b4ff;
+    text-color: #9db8e8;
 }
 
 entry {
     placeholder: "Search…";
-    placeholder-color: #a6afbd;
+    placeholder-color: #8a93a3;
 }
 
 listview {
@@ -49,16 +49,17 @@ listview {
 }
 
 element {
-    padding: 10px 12px;
+    padding: 10px 14px;
     spacing: 12px;
     border: 0px;
     border-radius: 10px;
 }
 
+/* A quiet highlight instead of a solid accent block. */
 element selected.normal,
 element selected.active {
-    background-color: #90b4ff;
-    text-color: #141820;
+    background-color: #90b4ff2e;
+    text-color: #ffffff;
 }
 
 element-text, element-icon {
@@ -67,15 +68,18 @@ element-text, element-icon {
 }
 
 element-icon {
-    size: 24px;
+    size: 26px;
 }
 
 message {
     border: 0px;
-    padding: 12px;
+    padding: 14px;
+    background-color: #ffffff08;
+    border-radius: 10px;
 }
 
-/* The keybinding cheat sheet uses aligned columns. */
+/* rofi's default theme scopes bare textboxes to its dark `foreground`
+   (#002b36), which turns the cheat sheet's message window unreadable. */
 textbox {
-    font: "monospace 12";
+    text-color: #dde4f0;
 }

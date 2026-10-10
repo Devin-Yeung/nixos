@@ -27,7 +27,7 @@
   imports = [
     ./hyprland.nix
     ./waybar.nix
-    ./launcher.nix
+    ./rofi.nix
     ./notifications.nix
     ./tools.nix
   ];

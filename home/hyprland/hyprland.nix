@@ -92,7 +92,7 @@ in
         # Spotlight muscle memory from macOS
         "$mod, space, exec, rofi -show drun"
         # Cheat sheet: Super+/ shows all keybinds
-        "$mod, slash, exec, rofi -e \"$(< $HOME/.config/hypr/cheatsheet.txt)\""
+        "$mod, slash, exec, rofi-cheatsheet"
 
         # Windows
         "$mod, q, killactive"
@@ -129,25 +129,4 @@ in
       ];
     };
   };
-
-  # Shown by Super+/. Keep the key column aligned with spaces (rendered in
-  # a monospace rofi message window).
-  xdg.configFile."hypr/cheatsheet.txt".text = ''
-    Super + Return        Open terminal (Ghostty)
-    Super + Space         App launcher (rofi, like macOS Cmd+Space)
-    Super + d             Same as above
-    Super + q             Close focused window
-    Super + f             Toggle fullscreen
-    Super + c / v         Copy / paste (terminal-safe in Ghostty)
-    Super + Shift + v     Toggle floating/tiled
-    Super + hjkl          Move focus (left/down/up/right)
-    Super + Shift + hjkl  Move window
-    Super + 1..0          Switch to workspace 1-10
-    Super + Shift + 1..0  Move window to workspace
-    Super + drag (LMB)    Move floating window
-    Super + drag (RMB)    Resize floating window
-    Super + Shift + s     Screenshot selection to clipboard
-    Super + Shift + c     Clipboard history
-    Super + Shift + e     Exit Hyprland
-  '';
 }
