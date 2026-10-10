@@ -11,6 +11,7 @@
     ./zoxide.nix
     ./rust.nix
     ./pnpm.nix
+    ./utils.nix
   ];
 
   home.username = "ycg";
