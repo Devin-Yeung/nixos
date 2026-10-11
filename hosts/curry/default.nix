@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ./boot.nix
     ./gpu.nix
+    ./datadog.nix
     ../../nixos
     ../../profiles/desktop
   ];
