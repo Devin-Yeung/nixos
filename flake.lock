@@ -157,6 +157,25 @@
         "url": "https://flakehub.com/f/nix-community/home-manager/0.2605.%2A.tar.gz"
       }
     },
+    "home-manager-nightly": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-nightly"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791642191,
+        "narHash": "sha256-0bK0A59rVUn1SRZzo4cNi4VSqAe7vR1gL2/MZl53Frw=",
+        "rev": "c58f54c733a7894d84fa2fdff26cc12088c4b78c",
+        "revCount": 7460,
+        "type": "tarball",
+        "url": "https://api.flakehub.com/f/pinned/nix-community/home-manager/0.1.7460%2Brev-c58f54c733a7894d84fa2fdff26cc12088c4b78c/01a12638-9adb-7533-a44f-0b3b141da02c/source.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://flakehub.com/f/nix-community/home-manager/0.1.%2A.tar.gz"
+      }
+    },
     "llm-agents": {
       "inputs": {
         "bun2nix": "bun2nix",
@@ -344,6 +363,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "home-manager-nightly": "home-manager-nightly",
         "llm-agents": "llm-agents",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-nightly": "nixpkgs-nightly",

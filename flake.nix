@@ -23,6 +23,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    home-manager-nightly = {
+      url = "https://flakehub.com/f/nix-community/home-manager/0.1.*.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs-nightly";
+    };
+
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";

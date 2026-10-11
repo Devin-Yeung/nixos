@@ -11,6 +11,8 @@
     ./zoxide.nix
     ./rust.nix
     ./pnpm.nix
+    ./devenv.nix
+    ./direnv.nix
     ./utils.nix
   ];
 
