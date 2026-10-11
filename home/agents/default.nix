@@ -9,6 +9,7 @@ in
 {
   imports = [
     ./herdr.nix
+    ./amp-runner.nix
   ];
 
   home.packages = with llm-agents; [

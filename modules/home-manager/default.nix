@@ -1,5 +1,6 @@
 {
   imports = [
+    ./amp-runner
     ./herdr
   ];
 }
