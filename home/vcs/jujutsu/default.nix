@@ -40,6 +40,13 @@
       # blank line between commits in `jj log`
       templates.log = "builtin_log_comfortable";
 
+      # Show the change's diff in the `jj describe` editor.
+      templates.draft_commit_description = ''
+        builtin_draft_commit_description
+        ++ "\nJJ: ignore-rest\n"
+        ++ diff.git()
+      '';
+
       remotes = {
         origin = {
           # auto tracking main/master branch
