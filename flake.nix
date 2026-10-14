@@ -37,28 +37,23 @@
       url = "github:numtide/llm-agents.nix";
     };
 
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
     # Includes the Nixvim, Nixpkgs, and Neovim overlay revisions it was tested with.
     nvim-config.url = "github:Devin-Yeung/nvim.nix";
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }@inputs:
-    let
-      pkgsNightly = import inputs.nixpkgs-nightly {
-        system = "x86_64-linux";
-        config.allowUnfree = true;
-      };
-    in
-    {
-      packages.x86_64-linux.mold = nixpkgs.legacyPackages.x86_64-linux.callPackage ./pkgs/mold { };
+    { flake-parts, ... }@inputs:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "x86_64-linux" ];
 
-      nixosConfigurations.curry = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs pkgsNightly; };
-        modules = [
-          home-manager.nixosModules.home-manager
-          ./hosts/curry
-        ];
-      };
+      imports = [
+        ./flakes/nixos.nix
+        ./flakes/pkgs.nix
+      ];
     };
 }
