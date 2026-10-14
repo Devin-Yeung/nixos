@@ -52,6 +52,7 @@
       systems = [ "x86_64-linux" ];
 
       imports = [
+        ./flakes/home-manager.nix
         ./flakes/nixos.nix
         ./flakes/pkgs.nix
       ];
