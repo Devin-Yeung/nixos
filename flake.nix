@@ -50,6 +50,8 @@
       };
     in
     {
+      packages.x86_64-linux.mold = nixpkgs.legacyPackages.x86_64-linux.callPackage ./pkgs/mold { };
+
       nixosConfigurations.curry = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs pkgsNightly; };
