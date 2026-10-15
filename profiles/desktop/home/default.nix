@@ -1,5 +1,6 @@
 {
   imports = [
+    ./zed
     ./hyprland
     ./ghostty.nix
     ./fonts.nix
