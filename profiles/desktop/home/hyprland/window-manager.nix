@@ -89,6 +89,8 @@ in
         # Apps
         "$mod, Return, exec, ghostty"
         "$mod, d, exec, rofi -show drun"
+        # Lock the screen (password required to come back)
+        "$mod, e, exec, hyprlock"
         # Spotlight muscle memory from macOS
         "$mod, space, exec, rofi -show drun"
         # Cheat sheet: Super+/ shows all keybinds

@@ -24,6 +24,20 @@ in
     pkgs.apple-cursor
   ];
 
+  # Boot straight into Hyprland without showing the login screen. The screen is
+  # locked with hyprlock (lock.nix). The SDDM login screen only appears again
+  # after an explicit logout, which is when the theme below is visible.
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "ycg";
+  };
+
+  # Unlock the keyring with the login password at SDDM sign-in.
+  security.pam.services.sddm.enableGnomeKeyring = true;
+  # Autologin has no password, so this only unlocks if the login keyring's
+  # password is empty (change it in seahorse). Otherwise apps prompt for it.
+  security.pam.services.sddm-autologin.enableGnomeKeyring = true;
+
   services.displayManager.defaultSession = "hyprland";
   services.displayManager.sddm = {
     enable = true;

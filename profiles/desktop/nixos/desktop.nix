@@ -1,7 +1,8 @@
 {
   imports = [
     ./hyprland.nix
-    ./greeter.nix
+    ./display-manager.nix
+    ./lock.nix
     ./services.nix
   ];
 }
