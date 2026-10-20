@@ -6,5 +6,6 @@
     ./nix.nix
     ./users.nix
     ./essential.nix
+    ./tailscale.nix
   ];
 }
