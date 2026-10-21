@@ -14,6 +14,7 @@
     ./devenv.nix
     ./direnv.nix
     ./utils.nix
+    ./comma.nix
   ];
 
   home.username = "ycg";
