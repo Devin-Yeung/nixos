@@ -19,6 +19,14 @@
     libraries = [ ];
   };
 
+  # Resolve `nixpkgs#foo` and `nix-shell -p foo` against the nixpkgs this
+  # system is built from, so no flake registry / channel download is needed.
+  nix.registry.nixpkgs.to = {
+    type = "path";
+    path = pkgs.path;
+  };
+  nix.nixPath = [ "nixpkgs=${pkgs.path}" ];
+
   nix.settings = {
     experimental-features = [
       "nix-command"
