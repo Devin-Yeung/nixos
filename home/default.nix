@@ -15,6 +15,7 @@
     ./direnv.nix
     ./utils.nix
     ./comma.nix
+    ./mold.nix
   ];
 
   home.username = "ycg";

@@ -1,12 +1,16 @@
 {
   config,
-  inputs,
   lib,
   pkgs,
   ...
 }:
 let
-  inherit (lib) mkEnableOption mkIf mkOption types;
+  inherit (lib)
+    mkEnableOption
+    mkIf
+    mkOption
+    types
+    ;
 
   cfg = config.programs.mold;
   triple = pkgs.stdenv.hostPlatform.rust.rustcTargetSpec;
@@ -17,8 +21,7 @@ in
 
     package = mkOption {
       type = types.package;
-      default = inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.mold;
-      defaultText = lib.literalExpression "inputs.self.packages.\${system}.mold";
+      default = pkgs.mold;
       description = "The mold package. Its `ld.mold` symlink is put on PATH for `-fuse-ld=mold`.";
     };
 
