@@ -10,6 +10,7 @@
     ./atuin.nix
     ./zoxide.nix
     ./rust.nix
+    ./go.nix
     ./pnpm.nix
     ./devenv.nix
     ./direnv.nix
