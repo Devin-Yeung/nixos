@@ -387,11 +387,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1792039376,
-        "narHash": "sha256-DYKUGoNBXDTmZQOPPfA8ikqDj7pi+Yh2PhmMXIR7h+Y=",
+        "lastModified": 1792616280,
+        "narHash": "sha256-oFm8BZMbdo2948I6gpeq2cnguXiXoihgqK79NCs2/RY=",
         "owner": "Devin-Yeung",
         "repo": "nvim.nix",
-        "rev": "f4289eaf44b2ed4239b86e413d0dee0549fef0e0",
+        "rev": "06ae2a725f32d18123024b9fb367fd83413c8484",
         "type": "github"
       },
       "original": {
