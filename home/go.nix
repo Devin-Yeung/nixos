@@ -1,25 +1,30 @@
 {
   config,
+  lib,
   pkgsNightly,
   ...
 }:
-let
-  go_path = "${config.home.homeDirectory}/.go";
-in
 {
-  home = {
-    sessionVariables = {
-      GOPATH = go_path;
+  programs.go = {
+    enable = true;
+    package = pkgsNightly.go;
+    env = {
+      GOPATH = [
+        "${config.home.homeDirectory}/.go"
+      ];
+      GOTOOLCHAIN = "local";
     };
-    sessionPath = [
-      "${go_path}/bin"
-    ];
-    packages = with pkgsNightly; [
-      go
-      gopls
-      golangci-lint
-      gotestsum # Test runner with better output formatting
-      air # Live reloading for Go development
-    ];
   };
+
+  # Derive PATH from the resolved GOPATH so the two cannot drift apart.
+  # `go install` binaries land in the first GOPATH entry's bin/ (GOBIN unset).
+  home.sessionPath = map (p: "${p}/bin") (lib.splitString ":" config.programs.go.env.GOPATH);
+
+  home.packages = with pkgsNightly; [
+    gopls
+    golangci-lint
+    gow
+    gotestsum # Test runner with better output formatting
+    air # Live reloading for Go development
+  ];
 }
