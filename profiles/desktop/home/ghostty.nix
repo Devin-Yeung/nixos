@@ -1,6 +1,9 @@
+{ pkgsNightly, ... }:
 {
   programs.ghostty = {
     enable = true;
+
+    package = pkgsNightly.ghostty;
 
     settings = {
       # font config
