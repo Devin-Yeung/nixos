@@ -5,6 +5,9 @@
   # pair with users.user.<name>.shell
   programs.zsh.enable = true;
 
+  # members of the wheel group can use sudo without a password
+  security.sudo.wheelNeedsPassword = false;
+
   users.users.ycg = {
     isNormalUser = true;
     description = "ycg";
