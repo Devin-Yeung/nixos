@@ -2,6 +2,6 @@
   perSystem =
     { pkgs, ... }:
     {
-      # pkgs here
+      packages.jj-hunk = pkgs.callPackage ../pkgs/jj-hunk { };
     };
 }
