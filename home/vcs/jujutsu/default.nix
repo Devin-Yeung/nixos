@@ -10,10 +10,10 @@
     ./fileset-aliases.nix
     ./revset-aliases.nix
     ./starship.nix
+    ./jjui
   ];
 
   home.packages = [
-    pkgsNightly.jjui
     pkgsNightly.jj-vine
     pkgs.jj-fzf
   ];
