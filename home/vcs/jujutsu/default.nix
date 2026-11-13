@@ -35,7 +35,7 @@
         diff-editor = [
           "nvim"
           "-c"
-          "DiffEditor $left $right $output"
+          "HunkDiffEditor $left $right $output"
         ];
         default-command = "log";
       };
