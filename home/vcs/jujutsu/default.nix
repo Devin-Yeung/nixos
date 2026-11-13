@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   pkgs,
   pkgsNightly,
   lib,
@@ -16,6 +17,7 @@
   home.packages = [
     pkgsNightly.jj-vine
     pkgs.jj-fzf
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.jj-hunk
   ];
 
   programs.jujutsu = {
